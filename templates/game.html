@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Import font/CSS/js -->
+	<meta charset="UTF-8">
+	<meta id="word" data-value={{word}}>
+	<title>Hangman</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/game.css">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+	<style type="text/css">
+	a:hover{
+		cursor: pointer;
+	}
+	</style>
+	<script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- Logout Button -->
+<form action="{{ url_for('logout') }}" method="post">
+	<button type="submit" id="logout" class = "btn btn-danger">Logout</button>
+</form>
+<!-- Score Board -->
+<div class="score" id="score">
+	SCORE: 0
+</div>
+<div class="best" id="best">
+	BEST: {{best}}
+</div>
+<h1>Hangman</h1>
+<!-- Letters -->
+<div class="container2">
+	<p id='test'></p>
+	<div class="container" align="center">
+				<button type="button" onclick="guess(this)" id="a" class="btn btn-outline-danger btn-lg">A</button>
+				<button type="button" onclick="guess(this)" id="b" class="btn btn-outline-danger btn-lg">B</button>
+				<button type="button" onclick="guess(this)" id="c" class="btn btn-outline-danger btn-lg">C</button>
+				<button type="button" onclick="guess(this)" id="d" class="btn btn-outline-danger btn-lg">D</button>
+				<button type="button" onclick="guess(this)" id="e" class="btn btn-outline-danger btn-lg">E</button>
+				<button type="button" onclick="guess(this)" id="f" class="btn btn-outline-danger btn-lg">F</button>
+				<button type="button" onclick="guess(this)" id="g" class="btn btn-outline-danger btn-lg">G</button>
+	</div>
+	<div class="container" align="center">
+				<button type="button" onclick="guess(this)" id="h" class="btn btn-outline-danger btn-lg">H</button>
+				<button type="button" onclick="guess(this)" id="i" class="btn btn-outline-danger btn-lg">I</button>
+				<button type="button" onclick="guess(this)" id="j" class="btn btn-outline-danger btn-lg">J</button>
+				<button type="button" onclick="guess(this)" id="k" class="btn btn-outline-danger btn-lg">K</button>
+				<button type="button" onclick="guess(this)" id="l" class="btn btn-outline-danger btn-lg">L</button>
+				<button type="button" onclick="guess(this)" id="m" class="btn btn-outline-danger btn-lg">M</button>
+				<button type="button" onclick="guess(this)" id="n" class="btn btn-outline-danger btn-lg">N</button>
+	</div>
+	<div class="container" align="center">
+				<button type="button" onclick="guess(this)" id="o" class="btn btn-outline-danger btn-lg">O</button>
+				<button type="button" onclick="guess(this)" id="p" class="btn btn-outline-danger btn-lg">P</button>
+				<button type="button" onclick="guess(this)" id="q" class="btn btn-outline-danger btn-lg">Q</button>
+				<button type="button" onclick="guess(this)" id="r" class="btn btn-outline-danger btn-lg">R</button>
+				<button type="button" onclick="guess(this)" id="s" class="btn btn-outline-danger btn-lg">S</button>
+				<button type="button" onclick="guess(this)" id="t" class="btn btn-outline-danger btn-lg">T</button>
+				<button type="button" onclick="guess(this)" id="u" class="btn btn-outline-danger btn-lg">U</button>
+	</div>
+	<div class="container" align="center">
+				<button type="button" onclick="guess(this)" id="v" class="btn btn-outline-danger btn-lg">V</button>
+				<button type="button" onclick="guess(this)" id="w" class="btn btn-outline-danger btn-lg">W</button>
+				<button type="button" onclick="guess(this)" id="x" class="btn btn-outline-danger btn-lg">X</button>
+				<button type="button" onclick="guess(this)" id="y" class="btn btn-outline-danger btn-lg">Y</button>
+				<button type="button" onclick="guess(this)" id="z" class="btn btn-outline-danger btn-lg">Z</button>
+	</div>
+</div>
+<div class="container3">
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+   	<div class="modal-dialog">
+   		<div class="modal-content">
+       		<div class="modal-header">
+       			<h4 id="modal_head" class="modal-title"></h4>
+       			<button type="button" class="close" data-dismiss="modal">&times;</button>
+       		</div>
+      			<div class="modal-body">
+       			<p id="modal_body"></p>
+       		</div>
+       		<div class="modal-footer">
+       			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       		</div>
+   		</div>
+     
+   	</div>
+  </div>
+
+<script type="text/javascript" src="/static/js/game.js"></script>
+</body>
+</html>
